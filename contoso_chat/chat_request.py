@@ -2,6 +2,7 @@ from dotenv import load_dotenv
 load_dotenv()
 
 from azure.cosmos import CosmosClient
+from typing import Optional
 from sys import argv
 import os
 import pathlib
@@ -84,6 +85,13 @@ def get_response(customerId, question, chat_history):
 
     return {"answer": result, "context": context}
 
-# if __name__ == "__main__":
-#     get_response(4, "What hiking jackets would you recommend?", [])
-#     #get_response(argv[1], argv[2], argv[3])
+def main(customer_id: Optional[int] = None, question: Optional[str] = None) -> None:
+    if customer_id is None:
+        customer_id = 4
+    if question is None:
+        question = "What hiking jackets would you recommend?"
+
+    get_response(customer_id, question, [])
+
+if __name__ == "__main__":
+    main()
