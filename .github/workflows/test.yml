@@ -48,6 +48,7 @@ jobs:
           AZURE_ENV_NAME: ${{ vars.AZURE_ENV_NAME }}
           AZURE_LOCATION: ${{ vars.AZURE_LOCATION }}
           AZURE_SUBSCRIPTION_ID: ${{ secrets.OIDC_AZURE_SUBSCRIPTION_ID }}
+          AZURE_PRINCIPAL_TYPE: 'ServicePrincipal'
 
       - name: Run tests
         run: pytest
