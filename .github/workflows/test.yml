@@ -1,4 +1,4 @@
-name: Deploy Contoso Chat
+name: Run Sample Validations
 
 on:
   workflow_dispatch:
